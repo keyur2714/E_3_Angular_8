@@ -1,0 +1,27 @@
+<!-- <p>
+  {{educationList[1].per}}
+  {{educationList[1].qulification}}
+  {{educationList[1].university}}
+  {{educationList[1].yearOfPassing}}
+</p> -->
+<div class="card">
+  <div class="card-header bg-info">
+    Education Details
+  </div>
+  <div class="card-body">
+    <table class="table table-bordered">
+      <tr>
+        <th>qulification</th>
+        <th>Year</th>
+        <th>Uni.</th>
+        <th>Per</th>
+      </tr>
+      <tr *ngFor="let education of educationList">
+        <td>{{education.qulification}}</td>
+        <td>{{education.yearOfPassing}}</td>
+        <td>{{education.university}}</td>
+        <td>{{education.per}}</td>
+      </tr>
+    </table>
+  </div>
+</div>
