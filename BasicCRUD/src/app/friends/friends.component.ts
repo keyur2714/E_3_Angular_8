@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FriendsComponent implements OnInit {
 
+  message : string = '';
   friendNames : string[] = ["keyur","denish","vinit"];
 
   constructor() { }
@@ -16,7 +17,14 @@ export class FriendsComponent implements OnInit {
     this.friendNames.push("hiren");
   }
 
-  addNewFriednd():void{
-    alert("Hello Friends...!");
+  addNewFriend(name : string):void{
+    //alert("Hello Friends...!"+ name);
+    let idx = this.friendNames.indexOf(name);
+    if(idx === -1){
+      this.message = '';
+      this.friendNames.push(name);
+    }else{
+      this.message = name+' Already Exists.';
+    }
   }
 }
