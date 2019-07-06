@@ -1,0 +1,33 @@
+<div class="card">
+  <div class="card-header bg-warning">
+    Manage Friends
+  </div>
+  <div class="card-body">
+    <table>
+      <tr>
+        <th>Name : </th>        
+        <td><input type=text name=name [(ngModel)]="friendName" class="form-control"/> </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <button (click)="add()" class="btn btn-info" *ngIf="! isUpdate">Add</button>
+          <button (click)="update()" class="btn btn-info" *ngIf="isUpdate">Update</button>
+        </td>
+      </tr>
+    </table>
+
+    <table class="table table-bordered">
+      <tr>
+        <th>Name</th>
+        <th>Action</th>
+      </tr>
+      <tr *ngFor="let name of friendNames;let i=index;">
+        <td>{{name}} -> {{i}}</td>
+        <td>
+          <button class="btn btn-success m-1" (click)="edit(i)">Edit</button>
+          <button class="btn btn-danger m-1" (click)="delete(i)">Delete</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
