@@ -9,4 +9,10 @@ export class AppComponent {
   title = 'DataBindings';
 
   name = 'keyur';
+
+  student = {
+    rollNo : 32,
+    name : 'keyur',
+    grade : 'Dist'
+  };
 }
