@@ -8,6 +8,8 @@ import { Product } from '../product.model';
 })
 export class ProductListComponent implements OnInit {
 
+  selectedProduct : Product = new Product();
+
   productList : Product[] = [];
   
   constructor() { }
@@ -34,6 +36,11 @@ export class ProductListComponent implements OnInit {
     this.productList.push(product1);
     this.productList.push(product2);
     this.productList.push(product3);
+
+    this.selectedProduct = this.productList[0];
   }
 
+  getSelectedValue():void{
+    alert("Selected Product is : "+this.selectedProduct.desc);
+  }
 }

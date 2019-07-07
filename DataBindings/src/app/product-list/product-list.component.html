@@ -1,4 +1,15 @@
 <div class="card">
+  <div class="card-header">
+    Select Product : 
+    <select name=product class="form-control" (change)="getSelectedValue()" [(ngModel)]="selectedProduct">
+      <option>-:Select Product:-</option>
+      <option *ngFor="let product of productList" [ngValue]="product">
+        {{product.desc}}
+      </option>
+    </select>
+  </div>
+</div>
+<div class="card">
   <div class="card-header bg-info">
     Product List
   </div>
