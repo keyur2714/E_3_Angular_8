@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { FriendsComponent } from './friends/friends.component';
+import { ProductListComponent } from './product-list/product-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FriendsComponent
+    FriendsComponent,
+    ProductListComponent
   ],
   imports: [
     BrowserModule,

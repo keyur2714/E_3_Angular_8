@@ -1,0 +1,21 @@
+<div class="card">
+  <div class="card-header bg-info">
+    Product List
+  </div>
+  <div class="card-body">
+    <table class="table table-striped">
+      <tr>
+        <th>Id</th>
+        <th>Code</th>
+        <th>Desc</th>
+        <th>Unit Price</th>
+      </tr>
+      <tr *ngFor="let product of productList">
+        <td>{{product.id}}</td>
+        <td>{{product.code}}</td>
+        <td>{{product.desc}}</td>
+        <td>{{product.unitPrice}}</td>
+      </tr>
+    </table>
+  </div>
+</div>

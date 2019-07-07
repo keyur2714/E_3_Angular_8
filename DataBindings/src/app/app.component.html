@@ -1,12 +1,69 @@
 <div class="container">
   <div class="row">
-    <div class="col">
-      <input type="text" name=name [(ngModel)]="student.grade" />
-    </div>
+    <div class="col-sm-12">
+      <input type="text" class="form-control" name=per [(ngModel)]="student.per" (blur)="checkValidPer()" />
+    </div>    
   </div>
   <div class="row">
-    <div class="col-sm-6">
+      <div class="col-sm-12">
+        <button (click)="calcGrade()" class="btn btn-info" [disabled]="! isCalcGradeEnable">Calculate grade</button>
+      </div>    
+  </div>
+  <div class="row" *ngIf="student.grade !== ''">
+    <div class="col-sm-12 alert alert-info">
+      Your Grade is : {{student.grade}}
+    </div>
+  </div>
+  <div class="row" [ngSwitch]="student.grade">
+      <div class="col-sm-12 alert alert-success" *ngSwitchCase="'Distiction'">
+        Your Grade is : {{student.grade}}
+      </div>
+      <div class="col-sm-12 alert alert-info" *ngSwitchCase="'First'">
+          Your Grade is : {{student.grade}}
+      </div>
+      <div class="col-sm-12 alert alert-warning" *ngSwitchCase="'Second'">
+          Your Grade is : {{student.grade}}
+      </div>
+      <div class="col-sm-12 alert alert-secondary" *ngSwitchCase="'PASS'">
+          Your Grade is : {{student.grade}}
+      </div>
+      <div class="col-sm-12 alert alert-danger" *ngSwitchCase="'FAIL'">
+          Your Grade is : {{student.grade}}
+      </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <input type="text" class="form-control" name=age [(ngModel)]="student.age" />
+    </div>    
+  </div>
+  <div class="row" *ngIf="student.age >= 18;then iFBlock;else elseBlock;">    
+    <!-- <div class="col-sm-12">
+      You are Elegible for voting...!
+    </div> -->
+  </div>
+  <!-- <div class="row" *ngIf="student.age < 18">
+    <div class="col-sm-12">
+      You are Not Elegible for voting...!
+    </div>
+  </div> -->
+  <div class="row">
+    <div class="col-sm-12">
       <app-friends></app-friends>
     </div>
   </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <app-product-list></app-product-list>
+    </div>
+  </div>
 </div>
+<ng-template #iFBlock>
+  <div class="col-sm-12">
+    You are Elegible for voting...!
+  </div>
+</ng-template>
+<ng-template #elseBlock>
+  <div class="col-sm-12">
+    You are Not Elegible for voting...!
+  </div>
+</ng-template>
