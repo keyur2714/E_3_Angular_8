@@ -1,0 +1,19 @@
+<!-- <table class="table table-striped">
+  <tr>
+    <th>RollNo</th>
+    <th>Name</th>
+    <th>Age</th>
+  </tr>
+  <tr *ngFor="let student of studentList">
+    <td>{{student.rollNo}}</td>
+    <td>{{student.name}}</td>
+    <td>{{student.age}}</td>
+  </tr>
+</table> -->
+
+<app-data-grid
+  [dataList]="studentList"
+  [columnHeaderList]="columnHeaderList"
+  [fieldList]="fieldList"
+>
+</app-data-grid>
