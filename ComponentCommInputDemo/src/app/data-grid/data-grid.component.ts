@@ -7,6 +7,12 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class DataGridComponent implements OnInit {
 
+  @Input("gridType")
+  gridTyp : string = 'striped';
+
+  @Input("backgroud")
+  bgColor : string = 'info';
+
   @Input() dataList : any[] = [];
 
   @Input() columnHeaderList : string[] = [];

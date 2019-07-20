@@ -9,8 +9,8 @@ import { Student } from './student.model';
 export class StudentsComponent implements OnInit {
 
   studentList : Student[] = [];
-  columnHeaderList : string[] = ["Name","Age"];
-  fieldList : string[] = ["name","age"];
+  columnHeaderList : string[] = ["RollNo","Name","Age"];
+  fieldList : string[] = ["rollNo","name","age"];
 
   constructor() { }
 
