@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+        <h1>{{title}}</h1>
+    </div>    
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <app-simple-calc (getResult)="getCalcResult($event)"></app-simple-calc>
+    </div>
+    <div class="col-sm-6">
+      Result Is : {{finalResult}}
+    </div>
+  </div>  
+  <div class="row">
+      <div class="col-sm-6">
+        <app-message></app-message>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-sm-6">
+        <app-message
+        [message]="'Good Afternoon...!'"
+        [messageType]="'success'"
+        (getFormattedMessage)="getMessage2($event)"
+        >          
+        </app-message>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-sm-6">
+        <app-message
+        [message]="myMessage"
+        [messageType]="'danger'"
+        (getFormattedMessage)="getMessage3($event)"
+        >          
+        </app-message>
+      </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      Formatted Message is: {{fMessage2}}
+    </div>
+  </div>
+  <div class="row">
+      <div class="col">
+        Formatted Message is: {{fMessage3}}
+      </div>
+    </div>
+</div>
