@@ -9,6 +9,7 @@ export class FriendsComponent implements OnInit {
 
   message : string = '';
   friendNames : string[] = ["keyur","denish","vinit"];
+  selectedFriend : string = '';
 
   constructor() { }
 
@@ -25,6 +26,21 @@ export class FriendsComponent implements OnInit {
       this.friendNames.push(name);
     }else{
       this.message = name+' Already Exists.';
+    }
+  }
+
+  setSelectedFriend(selectedFriend: string):void {
+    this.selectedFriend = selectedFriend;
+  }
+
+  delete(id:number):void{
+    //alert(id);
+    let confirmMsg = confirm("Are you sure want to delete?");
+    let deletedFrined = this.friendNames[id];
+    //alert(confirmMsg);
+    if(confirmMsg){
+      this.friendNames.splice(id,1);
+      this.message = deletedFrined+ ' Friend Deleted successfully...';
     }
   }
 }

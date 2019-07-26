@@ -19,15 +19,24 @@
     </table>
   </div>
 </div>
-<table class="table table-bordered bg-danger text-white">
+<table class="table table-bordered bg-info text-white">
   <thead>
     <tr>
       <th>Name</th>
+      <th>Action</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let friendName of friendNames">
+    <tr *ngFor="let friendName of friendNames;let i=index" (click)="setSelectedFriend(friendName)" [class.selected]="selectedFriend === friendName">
       <td>{{friendName}}</td> 
-    </tr>
+      <td><button class="btn btn-danger" (click)="delete(i)">Delete</button></td>
+    </tr>    
   </tbody>
+</table>
+<table class="table">
+  <tr *ngIf="selectedFriend !== ''">
+    <td>
+      Selected Friend is {{selectedFriend}}
+    </td>
+  </tr>
 </table>
