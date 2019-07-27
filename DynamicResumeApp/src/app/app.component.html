@@ -1,0 +1,46 @@
+<div class="container bg-danger text-white">
+  <div class="row form-group">
+    <div class="col-sm-12"><h1>{{title}}</h1></div>    
+  </div>  
+  <div class="row form-group">
+    <div class="col">      
+      <select class="form-control" name="personName" [(ngModel)]="selectedPerson">
+        <option>-:Select Name:-</option>
+        <option *ngFor="let person of personList" [ngValue]="person">
+          {{person.lastName}} , {{person.firstName}}
+        </option>
+      </select>
+    </div>
+  </div>
+  <div class="row form-group">
+    <div class="col-sm-6">
+      <app-personal-detail
+        [firstName]="selectedPerson.firstName"
+        [lastName]="selectedPerson.lastName"
+        [age]="selectedPerson.age"
+        [gender]="selectedPerson.gender"
+        [birthDate]="selectedPerson.dateOfBirth"
+      >
+      </app-personal-detail>
+    </div>
+    <div class="col-sm-6">
+      <app-contact-info
+        [contact]="selectedPerson.contact"
+      >        
+      </app-contact-info>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <app-skills
+        [skillList]="selectedPerson.skillSets"
+      ></app-skills>
+    </div>
+    <div class="col-sm-6">
+      <app-education
+        [educationList]="selectedPerson.eductaionList"
+      >        
+      </app-education>
+    </div>
+  </div>
+</div>

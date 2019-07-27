@@ -6,7 +6,9 @@
   </div>
   <div class="row">
     <div class="col-sm-6">
-      <app-simple-calc (getResult)="getCalcResult($event)"></app-simple-calc>
+      <app-simple-calc (getResult)="getCalcResult($event)">
+        Results :----
+      </app-simple-calc>
     </div>
     <div class="col-sm-6">
       Result Is : {{finalResult}}
