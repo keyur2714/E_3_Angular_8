@@ -1,0 +1,31 @@
+<div class="card">
+  <div class="card-header bg-info">
+    String Operations
+  </div>
+  <div class="card-body">
+    <table class="table">
+      <tr>
+        <th>Enter Any String: </th>        
+        <td><input type=text name=str #str class="form-control" /></td>
+      </tr>
+      <tr>
+        <td colspan="2">
+           <button class="btn btn-info m-1" (click)="upperCase()">UpperCase</button> 
+           <button class="btn btn-info m-1" (click)="lowerCase()">LowerCase</button> 
+           <button class="btn btn-info m-1" (click)="reverse()">Resverse String</button> 
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" #result>
+          <!-- Result String is : {{result}} -->
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <app-string-util></app-string-util>
+        </td>
+      </tr>
+
+    </table>
+  </div>
+</div>
