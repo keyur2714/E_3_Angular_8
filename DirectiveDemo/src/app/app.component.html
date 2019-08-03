@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+          <select class="form-control" (change)="changeColor()" [(ngModel)]="selectedColor">
+            <option value='red'>Red</option>
+            <option value='green'>Green</option>
+            <option value='blue'>Blue</option>
+          </select>
+        </div>
+      </div>
+  <div class="row">
+    <div class="col">
+      <h1 color #e1>Hello Radhe Krishna...!</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h3 color [myColor]="'green'" [size]="'20px'" #e2>Jay Shree Krishna...!</h3>
+    </div>
+  </div>
+  <div class="row">
+      <div class="col">
+        <h4 appMyStyle>Hi...!</h4>
+      </div>
+  </div>
+</div>
