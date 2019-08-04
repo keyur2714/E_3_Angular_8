@@ -1,0 +1,27 @@
+<h1>
+  {{title}}
+</h1>
+<div *ngIf="age < 18">
+  <h2>You are Not elegible for voting...!</h2>
+</div>
+<div *appMyIf="age >= 18">
+  <h2>You are elegible for voting...!</h2>
+</div>
+<ul>
+  <li *appMyLoop="7;index:2">Radhe Krishna...</li>
+</ul>
+
+<ng-template [appMyIf]="age >= 18">
+  <h2>You are elegible for voting From Ng Template...!</h2>
+</ng-template>
+
+<ng-template [ngIf]="age < 18">
+  <h2>You are Not elegible for voting From Ng Template...!</h2>
+</ng-template>
+
+<ng-template [appMyLoop]="3" [appMyLoopIndex]="7">
+<ul>
+  <li>Radhe Krishna...</li>
+</ul>
+</ng-template>
+
