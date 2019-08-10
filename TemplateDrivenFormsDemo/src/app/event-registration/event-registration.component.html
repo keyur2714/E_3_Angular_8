@@ -1,0 +1,96 @@
+<div class="card">
+  <div class="card-header bg-info">
+    Event Registration
+  </div>
+  <div class="card-body">
+    <form #frm=ngForm (ngSubmit)="save(frm)">
+      <div class="row form-group">
+        <div class="col-sm-3">Event Type</div>
+        <div class="col-sm-5">
+          <select name="eventType" class="form-control" [(ngModel)]="registration.eventType">
+            <option>-:Select Event:-</option>
+            <option *ngFor="let event of eventList" [ngValue]="event">
+              {{event.eventName}}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="row form-group">
+        <div class="col-sm-3">First Name</div>
+        <div class="col-sm-5">
+          <input type=text name=firstName class="form-control" [(ngModel)]="registration.firstName" required #firstName=ngModel/>
+        </div>        
+        <div class="col-sm-4" *ngIf="firstName.touched && firstName.invalid">
+          First name is mandatory field.
+        </div>
+      </div>
+      <div class="row form-group">
+        <div class="col-sm-3">Last Name</div>
+        <div class="col-sm-5">
+          <input type=text name=lastName class="form-control" [(ngModel)]="registration.lastName" required #lastName=ngModel/>
+        </div>
+        <div class="col-sm-4" *ngIf="lastName.touched && lastName.invalid">
+            Last name is mandatory field.
+          </div>
+      </div>
+      <div class="row form-group">
+        <div class="col-sm-3">Mobile No</div>
+        <div class="col-sm-5">
+          <input type=text name=mobileNo class="form-control" [(ngModel)]="registration.mobileNo" required #mobileNo=ngModel/>
+        </div>
+        <div class="col-sm-4" *ngIf="mobileNo.touched && mobileNo.invalid">
+            Mobile Number is mandatory field.
+          </div>
+      </div>
+      <div class="row form-group">
+        <div class="col-sm-3">Email</div>
+        <div class="col-sm-5">
+          <input type=text name=email class="form-control" [(ngModel)]="registration.email"/>
+        </div>
+      </div>
+      <div class="row form-group">
+        <div class="col-sm-3">Gender</div>
+        <div class="col-sm-5">
+          <div class="radio-inline">
+              <input type=radio name=gender value="M" [(ngModel)]="registration.gender"/> Male
+              <input type=radio name=gender value="F" [(ngModel)]="registration.gender"/> Female
+          </div>          
+        </div>
+      </div>
+      <div class="row form-group">
+        <div class="col-sm-5">
+          <button class="btn btn-info" [disabled]="frm.invalid">Register</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="card-footer bg-warning" *ngIf="isSubmitted">
+    <table class="table table-bordered">
+      <tr>
+          <td>Event</td>
+          <td>{{registration.eventType.eventName}}</td>
+      </tr>
+      <tr>
+        <td>First Name</td>
+        <td>{{registration.firstName}}</td>
+      </tr>
+      <tr>
+          <td>Last Name</td>
+          <td>{{registration.lastName}}</td>
+      </tr>
+      <tr>
+          <td>Email</td>
+          <td>{{registration.email}}</td>
+      </tr>
+      <tr>
+          <td>Mobile No</td>
+          <td>{{registration.mobileNo}}</td>
+      </tr>
+      <tr>
+          <td>Gender</td>
+          <td>{{registration.gender === 'M' ? 'Male' : 'Female'}}</td>
+      </tr>
+      
+    </table>
+  </div>
+</div>
