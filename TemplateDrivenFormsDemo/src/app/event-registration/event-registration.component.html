@@ -18,34 +18,60 @@
       <div class="row form-group">
         <div class="col-sm-3">First Name</div>
         <div class="col-sm-5">
-          <input type=text name=firstName class="form-control" [(ngModel)]="registration.firstName" required #firstName=ngModel/>
+          <input type=text name=firstName class="form-control" [(ngModel)]="registration.firstName" required minlength="3" #firstName=ngModel/>
         </div>        
         <div class="col-sm-4" *ngIf="firstName.touched && firstName.invalid">
-          First name is mandatory field.
+          <div *ngIf="firstName.errors['required']">
+              First name is mandatory field.
+          </div>          
+          <div *ngIf="firstName.errors['minlength']">
+              First name is min 3 character.
+          </div>          
         </div>
       </div>
       <div class="row form-group">
         <div class="col-sm-3">Last Name</div>
         <div class="col-sm-5">
-          <input type=text name=lastName class="form-control" [(ngModel)]="registration.lastName" required #lastName=ngModel/>
+          <input type=text name=lastName class="form-control" [(ngModel)]="registration.lastName" required minlength="3" #lastName=ngModel/>
         </div>
         <div class="col-sm-4" *ngIf="lastName.touched && lastName.invalid">
-            Last name is mandatory field.
-          </div>
+            <div *ngIf="lastName.errors['required']">
+                Last name is mandatory field.
+            </div>          
+            <div *ngIf="lastName.errors['minlength']">
+                Last name is min 3 character.
+            </div>                      
+        </div>
       </div>
       <div class="row form-group">
         <div class="col-sm-3">Mobile No</div>
         <div class="col-sm-5">
-          <input type=text name=mobileNo class="form-control" [(ngModel)]="registration.mobileNo" required #mobileNo=ngModel/>
+          <input type=text name=mobileNo class="form-control" [(ngModel)]="registration.mobileNo" required minlength="10" pattern="^[0-9]+$" #mobileNo=ngModel/>
         </div>
         <div class="col-sm-4" *ngIf="mobileNo.touched && mobileNo.invalid">
-            Mobile Number is mandatory field.
-          </div>
+            <div *ngIf="mobileNo.errors['required']">
+                Mobile Number is mandatory field.
+            </div>          
+            <div *ngIf="mobileNo.errors['minlength']">
+                Mobile Number is min 10 character.
+            </div>                      
+            <div *ngIf="mobileNo.errors['pattern']">
+                Mobile Number is Invalid. (only numeric allowed).
+            </div>                      
+        </div>
       </div>
       <div class="row form-group">
         <div class="col-sm-3">Email</div>
         <div class="col-sm-5">
-          <input type=text name=email class="form-control" [(ngModel)]="registration.email"/>
+          <input type=text name=email class="form-control" required email [(ngModel)]="registration.email" #email=ngModel/>
+        </div>
+        <div class="col-sm-4" *ngIf="email.touched && email.invalid">
+            <div *ngIf="email.errors['required']">
+                Email is mandatory field.
+            </div>          
+            <div *ngIf="email.errors['email']">
+                Invalid Email Address.
+            </div>          
         </div>
       </div>
       <div class="row form-group">
@@ -59,7 +85,8 @@
       </div>
       <div class="row form-group">
         <div class="col-sm-5">
-          <button class="btn btn-info" [disabled]="frm.invalid">Register</button>
+          <button type="submit" class="btn btn-info m-1" [disabled]="frm.invalid">Register</button>
+          <button type="button" class="btn btn-secondary m-1" (click)="reset(frm)">Reset</button>
         </div>
       </div>
     </form>

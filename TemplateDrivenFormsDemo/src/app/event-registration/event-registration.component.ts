@@ -49,4 +49,11 @@ export class EventRegistrationComponent implements OnInit {
       console.log(JSON.stringify(this.registration));
     }    
   }
+
+  reset(frm: NgForm):void {
+    frm.reset();
+    this.registration.clear();
+    this.registration.eventType = this.eventList[0];
+    this.registration.gender = 'M'; 
+  }
 }
