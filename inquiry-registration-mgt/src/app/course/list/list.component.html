@@ -1,0 +1,95 @@
+<div class="card-countainer">
+    <div class="card">
+        <div class="card-header">
+            Course Entry
+        </div>
+        <div class="card-body">
+            <form #f="ngForm" (ngSubmit)="save(f)">
+                <div class="row form-group alert alert-success" *ngIf="message !== ''">
+                    <div class="col">
+                        {{message}}
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-sm-4">
+                        Id : <sup>*</sup>
+                    </div>
+                    <div class="col-sm-4">
+                        <input type=text name=id [(ngModel)]="newCourse.id" required class="form-control" #id=ngModel [readonly]="isUpdate"/>
+                    </div>
+                    <div class="col-sm-4" *ngIf="id.invalid && id.touched">
+                        Id is Mandatory field.
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-sm-4">
+                        Course Name : <sup>*</sup>
+                    </div>
+                    <div class="col-sm-4">
+                        <input type=text name=courseName [(ngModel)]="newCourse.courseName" required class="form-control" #courseName=ngModel/>
+                    </div>
+                    <div class="col-sm-4" *ngIf="courseName.invalid && courseName.touched">
+                        Course Name is Mandatory field.
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-sm-4">
+                        Fees : <sup>*</sup>
+                    </div>
+                    <div class="col-sm-4">
+                        <input type=text name=fees [(ngModel)]="newCourse.fees" required class="form-control" #fees=ngModel/>
+                    </div>
+                    <div class="col-sm-4" *ngIf="fees.invalid && fees.touched">
+                        Fees is Mandatory field.
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-sm-4">
+                        Traner Name : <sup>*</sup>
+                    </div>
+                    <div class="col-sm-4">
+                        <input type=text name=trainerName [(ngModel)]="newCourse.trainerName" required class="form-control" #trainerName=ngModel/>
+                    </div>
+                    <div class="col-sm-4" *ngIf="trainerName.invalid && trainerName.touched">
+                        TrainerName is Mandatory field.
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-sm-4">
+                        <button class="btn btn-info" [disabled]="f.invalid">Save</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header bg-warning">
+            Manage Course
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Course Name</th>
+                        <th>Fess</th>
+                        <th>Trainer Name</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let course of courseList">
+                        <td>{{course.id}}</td>
+                        <td>{{course.courseName}}</td>
+                        <td>{{course.fees}}</td>
+                        <td>{{course.trainerName}}</td>
+                        <td>
+                            <button class="btn btn-success m-1" type="button" (click)="edit(course.id)">Edit</button>
+                            <button class="btn btn-danger m-1" type="button" (click)="delete(course.id)">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>    
+</div>

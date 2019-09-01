@@ -1,0 +1,34 @@
+{
+  "course_list": [
+    {
+      "id": 10,
+      "courseName": "Angular",
+      "fees": 13800,
+      "trainerName": "Keyur"
+    },
+    {
+      "id": 20,
+      "courseName": "Java",
+      "fees": 12800,
+      "trainerName": "Denish"
+    },
+    {
+      "id": 30,
+      "courseName": "Marketing",
+      "fees": 20800,
+      "trainerName": "Vinit"
+    },
+    {
+      "id": 40,
+      "courseName": "RPA",
+      "fees": 10800,
+      "trainerName": "Vipul"
+    },
+    {
+      "id": "50",
+      "courseName": "Azure",
+      "trainerName": "Ajay",
+      "fees": "12000"
+    }
+  ]
+}
