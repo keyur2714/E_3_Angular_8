@@ -1,0 +1,46 @@
+
+	
+	
+	DI - 
+	Creation of Object will be taken care by container. - Angular
+
+	- to make project/application loosely coupled we are using DI.
+		
+	- In Angular to achieve DI
+	
+	1. providers : 
+		it's availble with module as well as component
+	
+	- if we provide service on module level Providers: []
+	then it will allow that service to be inject in all the component of that module.
+	
+	- Angular supports - DI with constructor.
+	
+	- component level:
+		providers : []
+	
+	
+	------------------------------------------------------------------------------------
+			Iquestion 
+				+askQuestion():string
+	SpringQuestion		AngularQuestion		BigDataQuestion
+	|			
+	askQuestion(){				
+		
+	}
+
+	------------------------
+	
+	iQuestion : IQuestion;
+	iQuestion.askQuestion();
+	
+			
+	-------------------Service ---------
+	-- use for write business logic
+	-- @Injectable() - we generally use in service class but it's not mandatory
+	-- it's require if our service class inject some another service in that case it's required.
+	
+	- you need to specify this service class in providers : [] either at module level or at component level.	
+
+
+		
