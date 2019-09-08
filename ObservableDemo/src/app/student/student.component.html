@@ -1,0 +1,14 @@
+<table class="table table-bordered">
+    <tr>
+        <th>Roll No</th>
+        <th>Name</th>
+    </tr>
+    <tr *ngFor="let student of studentList">
+        <td>{{student.rollNo}}</td>
+        <td>{{student.name}}</td>
+    </tr>
+</table>
+
+    <ul *ngFor="let name of names">
+        <li>{{name}}</li>
+    </ul>
