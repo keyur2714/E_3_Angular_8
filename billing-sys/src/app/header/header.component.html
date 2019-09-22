@@ -11,6 +11,7 @@
         </ul>
         <ul class="nav navbar-nav navbar-right">
             <li class="nav-item"><a class="nav-link" href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-            <li class="nav-item"><a class="nav-link" [routerLink]="'signin'" [routerLinkActive]="'active'"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            <li class="nav-item" *ngIf="! isLoggedIn"><a class="nav-link" [routerLink]="'signin'" [routerLinkActive]="'active'"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            <li class="nav-item" *ngIf="isLoggedIn"><a class="nav-link" [routerLink]="'signout'" [routerLinkActive]="'active'"><span class="glyphicon glyphicon-log-out"></span> Signout</a></li>
         </ul>    
 </nav>

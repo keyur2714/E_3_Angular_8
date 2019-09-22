@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -15,6 +16,8 @@ import { ProductListComponent } from './admin/product-list/product-list.componen
 import { UserListComponent } from './admin/user-list/user-list.component';
 import { AuthService } from './auth/auth.service';
 import { AuthGuardService } from './auth/auth-guard.service';
+import { AuthInterceptor } from './auth/auth-interceptor.service';
+
 
 @NgModule({
   declarations: [
@@ -32,11 +35,18 @@ import { AuthGuardService } from './auth/auth-guard.service';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
+    ReactiveFormsModule,
     AppRoutingModule
   ],
   providers: [
     AuthService,
-    AuthGuardService
+    AuthGuardService,
+    {
+      provide : HTTP_INTERCEPTORS,
+      useClass : AuthInterceptor,
+      multi : true
+    }   
   ],
   bootstrap: [AppComponent]
 })

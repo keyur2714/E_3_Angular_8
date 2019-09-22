@@ -9,6 +9,7 @@ import { SigninComponent } from './signin/signin.component';
 import { ProductListComponent } from './admin/product-list/product-list.component';
 import { UserListComponent } from './admin/user-list/user-list.component';
 import { AuthGuardService } from './auth/auth-guard.service';
+import { SignoutComponent } from './signout/signout.component';
 
 
 const routes: Routes = [
@@ -24,6 +25,7 @@ const routes: Routes = [
     ]    
   },
   { path : 'signin', component : SigninComponent},
+  { path : 'signout', component : SignoutComponent},
 ];
 
 @NgModule({

@@ -1,1 +1,27 @@
-<p>product-list works!</p>
+<div class="card-container">
+    <div class="card">
+        <div class="card-header bg-dark text-white">
+            Product List
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Product Id</th>
+                        <th>Product</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                    </tr>                    
+                </thead>
+                <tbody>
+                    <tr *ngFor="let product of productList">
+                        <td>{{product.id}}</td>
+                        <td>{{product.code}}</td>
+                        <td>{{product.desc}}</td>
+                        <td>{{product.price}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

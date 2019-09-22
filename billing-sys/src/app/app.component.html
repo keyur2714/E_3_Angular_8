@@ -1,12 +1,12 @@
 <div class="container">
   <div class="row">    
     <div class="col">
-        <app-header [title]="title"></app-header>      
+        <app-header [title]="title" [isLoggedIn]="isLoggedIn"></app-header>      
     </div>
   </div>
   <div class="row">
     <div class="col">
-      <router-outlet></router-outlet>
+      <router-outlet (activate)="checkLoggedIn()"></router-outlet>
     </div>
   </div>
 </div>

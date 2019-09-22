@@ -10,6 +10,9 @@ export class HeaderComponent implements OnInit {
   @Input()
   title : string = '';
 
+  @Input()
+  isLoggedIn : boolean = false;
+
   constructor() { }
 
   ngOnInit() {
