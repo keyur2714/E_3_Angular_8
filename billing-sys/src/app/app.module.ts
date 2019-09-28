@@ -17,6 +17,7 @@ import { UserListComponent } from './admin/user-list/user-list.component';
 import { AuthService } from './auth/auth.service';
 import { AuthGuardService } from './auth/auth-guard.service';
 import { AuthInterceptor } from './auth/auth-interceptor.service';
+import { ProductDetailComponent } from './admin/product-detail/product-detail.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { AuthInterceptor } from './auth/auth-interceptor.service';
     AdminComponent,
     HeaderComponent,
     ProductListComponent,
-    UserListComponent
+    UserListComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,

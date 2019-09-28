@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>{{title | loopPipe : 3}}</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h3>{{name | lowercase | uppercase | welcome}}</h3>
+      <h3>{{'denish' | lowercase | uppercase | welcome}}</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h3>{{today | date : 'dd/MMM/yyyy hh:mm:ss a' | lowercase}}</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h3>{{employee | json}}</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h3>{{numberObservable | async}}</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      {{accountNumber | mask : '#' : 6}}
+    </div>
+  </div>
+</div>

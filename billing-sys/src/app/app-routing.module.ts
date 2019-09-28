@@ -10,6 +10,7 @@ import { ProductListComponent } from './admin/product-list/product-list.componen
 import { UserListComponent } from './admin/user-list/user-list.component';
 import { AuthGuardService } from './auth/auth-guard.service';
 import { SignoutComponent } from './signout/signout.component';
+import { ProductDetailComponent } from './admin/product-detail/product-detail.component';
 
 
 const routes: Routes = [
@@ -20,7 +21,13 @@ const routes: Routes = [
   { path : 'sales', component : SalesComponent},
   { path : 'admin', component : AdminComponent,canActivate : [AuthGuardService],
     children : [
-      {path : 'manage-products' , component : ProductListComponent},
+      {
+        path : 'manage-products' , component : ProductListComponent,
+        canActivateChild : [AuthGuardService],
+        children : [
+          {path : 'detail/:id' , component : ProductDetailComponent}
+        ]
+      },
       {path : 'manage-users' , component : UserListComponent}
     ]    
   },

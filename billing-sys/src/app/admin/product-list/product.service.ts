@@ -13,4 +13,8 @@ export class ProductService {
     getProductList() : Observable<Product[]>{
         return this.httpClient.get<Product[]>(this.appUrl);
     }
+
+    getProductById(id : number ) : Observable<Product> {
+        return this.httpClient.get<Product>(this.appUrl+"/"+id);
+    }
 }

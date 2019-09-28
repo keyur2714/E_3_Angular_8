@@ -52,8 +52,10 @@
 	10. Interceptor in HttpClientModule with Login Authentication - Done
 	11.Router - For Navigation	- Done
 	12.Route Guards - for Authorizations - Done 
-	13. Custom Modules and it's communications - Done
-	14. Lazy Loading & Eager Loading in Modules - Done
+
+	13. Custom Modules and it's communications - 
+	14. Lazy Loading & Eager Loading in Modules -
+ 
 	15. Pipes - for Data Transform. it's like Filter - Done
 		- Inbuilt Pipes - Done
 		- Custom Pipes - Done
@@ -68,6 +70,6 @@
 		- Jasmin
 		- Karma
 	19. E2E Testing Undrestanding
-	20. Basic Usecase Project with Forms Module/Http Client Module/Router and Login authentication & authorization 
-	21. Deployments with some Local Server like Tomcat/WAMP ---- Done
+	20. Basic Usecase Project with Forms Module/Http Client Module/Router and Login authentication & authorization -- In Progress
+	21. Deployments with some Local Server like Tomcat/WAMP ----
 			
